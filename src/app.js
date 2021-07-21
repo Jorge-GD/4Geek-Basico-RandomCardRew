@@ -19,36 +19,35 @@ var saveCard = [];
 var cuenta = 0;
 
 window.onload = function() {
-  //write your code here
   console.log("Hello Rigo from the console!");
 
   main();
   interval();
   clickButton();
   submit();
+
+  // las variables se guardan instanciadas
 };
 
 var main = () => {
-  let randi = getRandomCard();
-  changeMainCard(randi);
-  saveCard.push(randi);
+  changeMainCard(getRandomCard());
+  saveCard.push(getRandomCard());
   cuenta++;
 };
 
 var interval = () => {
   setInterval(function() {
-    let randi = getRandomCard();
-    changeMainCard(randi);
-    saveCard.push(randi);
+    changeMainCard(getRandomCard());
+    saveCard.push(getRandomCard());
   }, 30000);
 };
 
 var clickButton = () => {
-  let randi = getRandomCard();
   mainCard.addEventListener("click", event => {
-    changeMainCard(randi);
-    saveCard.push(randi);
+    changeMainCard(getRandomCard());
+    saveCard.push(getRandomCard());
     cuenta++;
+    console.log(2);
   });
 };
 
@@ -72,6 +71,7 @@ function getRandomCard() {
 }
 
 function changeMainCard(varible) {
+  console.log(varible);
   if (varible[0] == 0) {
     mainCard.style.backgroundImage =
       "url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Playing_card_diamond_A.svg/1200px-Playing_card_diamond_A.svg.png')";
@@ -79,7 +79,7 @@ function changeMainCard(varible) {
   } else if (varible[0] == 1) {
     console.log("Soy un " + figu[varible[0]]);
     mainCard.style.backgroundImage =
-      "url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Playing_card_heart_A.svg/1200px-Playing_card_heart_A.svg.png)";
+      "url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/ace-of-hearts-i-21-casino-blackjack-i-card-poker-graphic-bi-nutz.jpg')";
   } else if (varible[0] == 2) {
     console.log("Soy un " + figu[varible[0]]);
     mainCard.style.backgroundImage =
