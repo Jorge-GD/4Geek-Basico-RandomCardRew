@@ -1,29 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <title>Card Generator</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <button id="btn" class="button"></button>
+
+    <div id="card" class="card"></div>
+    <footer>
+      <ul class="record">
+        <li id="miniOne" class="preview"></li>
+        <li id="miniTwo" class="preview2"></li>
+        <li id="miniTree" class="preview3"></li>
+        <li id="miniFour" class="preview4"></li>
+        <li id="miniFive" class="preview5"></li>
+      </ul>
+    </footer>
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>
+          Ingresa los parametros para cambiar el ancho y el alto de la carta.
+        </h4>
+        <form>
+          <label for="fname">Altura:</label>
+          <input type="text" id="altura" name="fname" /><p id="valtura"></p></input>
+          <label for="lname">Ancho:</label>
+          <input type="text" id="ancho" name="lname" /><p id="vancho"></p></input>
+          <input type="submit" value="Envio" id="submit" class="submi"  /></input>
+
+        
+        </form>
       </div>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>
