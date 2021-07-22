@@ -30,21 +30,21 @@ window.onload = function() {
 };
 
 var main = () => {
-  changeMainCard(getRandomCard());
+  changeMainCard(getRandomCard(), mainCard);
   saveCard.push(getRandomCard());
   cuenta++;
 };
 
 var interval = () => {
   setInterval(function() {
-    changeMainCard(getRandomCard());
+    changeMainCard(getRandomCard(), mainCard);
     saveCard.push(getRandomCard());
   }, 30000);
 };
 
 var clickButton = () => {
   mainCard.addEventListener("click", event => {
-    changeMainCard(getRandomCard());
+    changeMainCard(getRandomCard(), mainCard);
     saveCard.push(getRandomCard());
     cuenta++;
     console.log(2);
@@ -61,51 +61,144 @@ optionButton.addEventListener("mouseout", function() {
   document.querySelector(".button").style.width = "6vw";
 });
 
-function getRandom(pepito) {
-  return Math.floor(Math.random() * pepito.length);
-}
-
 function getRandomCard() {
-  let card = [getRandom(figu), getRandom(numb)];
-  return card;
+  return [
+    Math.floor(Math.random() * figu.length),
+    Math.floor(Math.random() * numb.length)
+  ];
 }
 
-function changeMainCard(varible) {
-  console.log(varible);
-  if (varible[0] == 0) {
-    mainCard.style.backgroundImage =
-      "url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Playing_card_diamond_A.svg/1200px-Playing_card_diamond_A.svg.png')";
-    console.log("Soy un " + figu[varible[0]]);
-  } else if (varible[0] == 1) {
-    console.log("Soy un " + figu[varible[0]]);
-    mainCard.style.backgroundImage =
-      "url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/ace-of-hearts-i-21-casino-blackjack-i-card-poker-graphic-bi-nutz.jpg')";
-  } else if (varible[0] == 2) {
-    console.log("Soy un " + figu[varible[0]]);
-    mainCard.style.backgroundImage =
-      "url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Ace_of_spades.svg/706px-Ace_of_spades.svg.png')";
+function changeMainCard(variable, lugar) {
+  if (variable[0] == 0) {
+    if (variable[1] == 0) {
+      lugar.style.backgroundImage = "url('Poker/AD.png')";
+    } else if (variable[1] == 1) {
+      lugar.style.backgroundImage = "url('Poker/2D.png')";
+    } else if (variable[1] == 2) {
+      lugar.style.backgroundImage = "url('Poker/3D.png')";
+    } else if (variable[1] == 3) {
+      lugar.style.backgroundImage = "url('Poker/4D.png')";
+    } else if (variable[1] == 4) {
+      lugar.style.backgroundImage = "url('Poker/5D.png')";
+    } else if (variable[1] == 5) {
+      lugar.style.backgroundImage = "url('Poker/6D.png')";
+    } else if (variable[1] == 6) {
+      lugar.style.backgroundImage = "url('Poker/7D.png')";
+    } else if (variable[1] == 7) {
+      lugar.style.backgroundImage = "url('Poker/8D.png')";
+    } else if (variable[1] == 8) {
+      lugar.style.backgroundImage = "url('Poker/9D.png')";
+    } else if (variable[1] == 9) {
+      lugar.style.backgroundImage = "url('Poker/10D.png')";
+    } else if (variable[1] == 10) {
+      lugar.style.backgroundImage = "url('Poker/JD.png')";
+    } else if (variable[1] == 11) {
+      lugar.style.backgroundImage = "url('Poker/QD.png')";
+    } else {
+      lugar.style.backgroundImage = "url('Poker/KD.png')";
+    }
+  } else if (variable[0] == 1) {
+    if (variable[1] == 0) {
+      lugar.style.backgroundImage = "url('Poker/AS.png')";
+    } else if (variable[1] == 1) {
+      lugar.style.backgroundImage = "url('Poker/2S.png')";
+    } else if (variable[1] == 2) {
+      lugar.style.backgroundImage = "url('Poker/3S.png')";
+    } else if (variable[1] == 3) {
+      lugar.style.backgroundImage = "url('Poker/4S.png')";
+    } else if (variable[1] == 4) {
+      lugar.style.backgroundImage = "url('Poker/5S.png')";
+    } else if (variable[1] == 5) {
+      lugar.style.backgroundImage = "url('Poker/6S.png')";
+    } else if (variable[1] == 6) {
+      lugar.style.backgroundImage = "url('Poker/7S.png')";
+    } else if (variable[1] == 7) {
+      lugar.style.backgroundImage = "url('Poker/8S.png')";
+    } else if (variable[1] == 8) {
+      lugar.style.backgroundImage = "url('Poker/9S.png')";
+    } else if (variable[1] == 9) {
+      lugar.style.backgroundImage = "url('Poker/10S.png')";
+    } else if (variable[1] == 10) {
+      lugar.style.backgroundImage = "url('Poker/JS.png')";
+    } else if (variable[1] == 11) {
+      lugar.style.backgroundImage = "url('Poker/QS.png')";
+    } else {
+      lugar.style.backgroundImage = "url('Poker/KS.png')";
+    }
+  } else if (variable[0] == 2) {
+    if (variable[1] == 0) {
+      lugar.style.backgroundImage = "url('Poker/AH.png')";
+    } else if (variable[1] == 1) {
+      lugar.style.backgroundImage = "url('Poker/2H.png')";
+    } else if (variable[1] == 2) {
+      lugar.style.backgroundImage = "url('Poker/3H.png')";
+    } else if (variable[1] == 3) {
+      lugar.style.backgroundImage = "url('Poker/4H.png')";
+    } else if (variable[1] == 4) {
+      lugar.style.backgroundImage = "url('Poker/5H.png')";
+    } else if (variable[1] == 5) {
+      lugar.style.backgroundImage = "url('Poker/6H.png')";
+    } else if (variable[1] == 6) {
+      lugar.style.backgroundImage = "url('Poker/7H.png')";
+    } else if (variable[1] == 7) {
+      lugar.style.backgroundImage = "url('Poker/8H.png')";
+    } else if (variable[1] == 8) {
+      lugar.style.backgroundImage = "url('Poker/9H.png')";
+    } else if (variable[1] == 9) {
+      lugar.style.backgroundImage = "url('Poker/10H.png')";
+    } else if (variable[1] == 10) {
+      lugar.style.backgroundImage = "url('Poker/JH.png')";
+    } else if (variable[1] == 11) {
+      lugar.style.backgroundImage = "url('Poker/QH.png')";
+    } else {
+      lugar.style.backgroundImage = "url('Poker/KH.png')";
+    }
   } else {
-    console.log("Soy un " + figu[varible[0]]);
-    mainCard.style.backgroundImage =
-      "url('https://i.pinimg.com/originals/7f/da/f8/7fdaf8349a53230468944e2f0965f04e.jpg')";
+    if (variable[1] == 0) {
+      lugar.style.backgroundImage = "url('Poker/AC.png')";
+    } else if (variable[1] == 1) {
+      lugar.style.backgroundImage = "url('Poker/2C.png')";
+    } else if (variable[1] == 2) {
+      lugar.style.backgroundImage = "url('Poker/3C.png')";
+    } else if (variable[1] == 3) {
+      lugar.style.backgroundImage = "url('Poker/4C.png')";
+    } else if (variable[1] == 4) {
+      lugar.style.backgroundImage = "url('Poker/5C.png')";
+    } else if (variable[1] == 5) {
+      lugar.style.backgroundImage = "url('Poker/6C.png')";
+    } else if (variable[1] == 6) {
+      lugar.style.backgroundImage = "url('Poker/7C.png')";
+    } else if (variable[1] == 7) {
+      lugar.style.backgroundImage = "url('Poker/8C.png')";
+    } else if (variable[1] == 8) {
+      lugar.style.backgroundImage = "url('Poker/9C.png')";
+    } else if (variable[1] == 9) {
+      lugar.style.backgroundImage = "url('Poker/10C.png')";
+    } else if (variable[1] == 10) {
+      lugar.style.backgroundImage = "url('Poker/JC.png')";
+    } else if (variable[1] == 11) {
+      lugar.style.backgroundImage = "url('Poker/QC.png')";
+    } else {
+      lugar.style.backgroundImage = "url('Poker/KC.png')";
+    }
   }
 }
 
-function changePlayCard(varible) {
-  if (varible[0] == 0) {
+function changePlayCard(variable) {
+  if (variable[0] == 0) {
     document.querySelector(".card").style.backgroundImage =
       "url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Playing_card_diamond_A.svg/1200px-Playing_card_diamond_A.svg.png')";
-    console.log("Soy un " + figu[varible[0]]);
-  } else if (varible[0] == 1) {
-    console.log("Soy un " + figu[varible[0]]);
+    console.log("Soy un " + figu[variable[0]]);
+  } else if (variable[0] == 1) {
+    console.log("Soy un " + figu[variable[0]]);
     document.querySelector(".card").style.backgroundImage =
       "url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Playing_card_heart_A.svg/1200px-Playing_card_heart_A.svg.png)";
-  } else if (varible[0] == 2) {
-    console.log("Soy un " + figu[varible[0]]);
+  } else if (variable[0] == 2) {
+    console.log("Soy un " + figu[variable[0]]);
     document.querySelector(".card").style.backgroundImage =
       "url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Ace_of_spades.svg/706px-Ace_of_spades.svg.png')";
   } else {
-    console.log("Soy un " + figu[varible[0]]);
+    console.log("Soy un " + figu[variable[0]]);
     document.querySelector(".card").style.backgroundImage =
       "url('https://i.pinimg.com/originals/7f/da/f8/7fdaf8349a53230468944e2f0965f04e.jpg')";
   }
