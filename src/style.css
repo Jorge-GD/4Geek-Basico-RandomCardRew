@@ -1,8 +1,8 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
 .card {
-  width: 25vw;
-  height: 35vw;
+  width: 22vw;
+  height: 62vh;
   background-color: transparent;
   background-size: 100%;
   background-repeat: no-repeat;

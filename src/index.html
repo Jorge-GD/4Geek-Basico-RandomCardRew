@@ -22,7 +22,6 @@
       </ul>
     </footer>
     <div id="myModal" class="modal">
-      <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
         <h4>
@@ -30,9 +29,9 @@
         </h4>
         <form>
           <label for="fname">Altura:</label>
-          <input type="text" id="altura" name="fname" /><p id="valtura"></p></input>
+          <input type="text" id="altura" name="fname" /><p id="valtura" pattern="[0-9]{4}" ></p></input>
           <label for="lname">Ancho:</label>
-          <input type="text" id="ancho" name="lname" /><p id="vancho"></p></input>
+          <input type="text" id="ancho" name="lname" /><p id="vancho" pattern="[0-9]{4}"></p></input>
           <input type="submit" value="Envio" id="submit" class="submi"  /></input>
 
         

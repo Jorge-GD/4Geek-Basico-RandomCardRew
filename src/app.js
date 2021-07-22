@@ -15,51 +15,72 @@ const valtura = document.querySelector("#valtura");
 const ancho = document.querySelector("#ancho");
 const vancho = document.getElementById("#vancho");
 
-var saveCard = [];
-var cuenta = 0;
-
 window.onload = function() {
   console.log("Hello Rigo from the console!");
+
+  let saveCard = [];
+  let cuenta = 0;
 
   main();
   interval();
   clickButton();
   submit();
-
-  // las variables se guardan instanciadas
+  previewCard();
 };
 
-var main = () => {
+const main = () => {
   changeMainCard(getRandomCard(), mainCard);
-  saveCard.push(getRandomCard());
-  cuenta++;
+  mouseModal();
 };
 
-var interval = () => {
+const interval = () => {
   setInterval(function() {
     changeMainCard(getRandomCard(), mainCard);
-    saveCard.push(getRandomCard());
   }, 30000);
 };
 
-var clickButton = () => {
+const clickButton = () => {
   mainCard.addEventListener("click", event => {
     changeMainCard(getRandomCard(), mainCard);
-    saveCard.push(getRandomCard());
-    cuenta++;
     console.log(2);
   });
 };
 
-optionButton.addEventListener("mouseover", function() {
-  document.querySelector(".button").style.height = "10vw";
-  document.querySelector(".button").style.width = "8vw";
-});
+//Modificacion Ancho y largo
 
-optionButton.addEventListener("mouseout", function() {
-  document.querySelector(".button").style.height = "8vw";
-  document.querySelector(".button").style.width = "6vw";
-});
+const submit = () => {
+  let submitt = document.querySelector("#submit");
+
+  submitt.addEventListener("click", function(event) {
+    let bancho = ancho.value;
+    let Baltura = altura.value;
+
+    updateAltura(Baltura);
+    updateAncho(bancho);
+    event.preventDefault();
+  });
+};
+
+function updateAltura(e) {
+  mainCard.style.height = e + "vw";
+  console.log(mainCard.style.height);
+}
+
+function updateAncho(e) {
+  mainCard.style.width = e + "vw";
+  console.log(mainCard.style.width);
+}
+
+const mouseModal = () => {
+  optionButton.addEventListener("mouseover", function() {
+    document.querySelector(".button").style.height = "10vw";
+    document.querySelector(".button").style.width = "8vw";
+  });
+  optionButton.addEventListener("mouseout", function() {
+    document.querySelector(".button").style.height = "8vw";
+    document.querySelector(".button").style.width = "6vw";
+  });
+};
 
 function getRandomCard() {
   return [
@@ -184,44 +205,7 @@ function changeMainCard(variable, lugar) {
   }
 }
 
-function changePlayCard(variable) {
-  if (variable[0] == 0) {
-    document.querySelector(".card").style.backgroundImage =
-      "url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Playing_card_diamond_A.svg/1200px-Playing_card_diamond_A.svg.png')";
-    console.log("Soy un " + figu[variable[0]]);
-  } else if (variable[0] == 1) {
-    console.log("Soy un " + figu[variable[0]]);
-    document.querySelector(".card").style.backgroundImage =
-      "url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Playing_card_heart_A.svg/1200px-Playing_card_heart_A.svg.png)";
-  } else if (variable[0] == 2) {
-    console.log("Soy un " + figu[variable[0]]);
-    document.querySelector(".card").style.backgroundImage =
-      "url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Ace_of_spades.svg/706px-Ace_of_spades.svg.png')";
-  } else {
-    console.log("Soy un " + figu[variable[0]]);
-    document.querySelector(".card").style.backgroundImage =
-      "url('https://i.pinimg.com/originals/7f/da/f8/7fdaf8349a53230468944e2f0965f04e.jpg')";
-  }
-}
-
-//Modificacion Ancho y largo
-
-var submit = () => {
-  document.querySelector("#submit").addEventListener("click", () => {
-    ancho.addEventListener("input", updateAncho);
-    altura.addEventListener("input", updateAltura);
-
-    function updateAltura(e) {
-      mainCard.style.height = e + "vw";
-      console.log(mainCard.style.height);
-    }
-
-    function updateAncho(a) {
-      mainCard.style.width = a + "vw";
-      console.log(mainCard.style.width);
-    }
-  });
-};
+function previewCard() {}
 
 //Parte del modal, sin boostrap
 
