@@ -5,7 +5,7 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-const figu = ["♦", "♥", "♠", "♣"];
+const figu = [":diamond:", "♥", "♠", "♣"];
 const numb = ["A", 2, 3, 4, 5, 6, 7, 8, 9, "J", "Q", "K"];
 const mainCard = document.querySelector(".card");
 const optionButton = document.querySelector("#btn");
@@ -17,15 +17,12 @@ const vancho = document.getElementById("#vancho");
 
 window.onload = function() {
   console.log("Hello Rigo from the console!");
-
-  let saveCard = [];
-  let cuenta = 0;
+  //Trabajando en otra implementaciones
 
   main();
   interval();
   clickButton();
   submit();
-  previewCard();
 };
 
 const main = () => {
@@ -40,7 +37,7 @@ const interval = () => {
 };
 
 const clickButton = () => {
-  mainCard.addEventListener("click", event => {
+  mainCard.addEventListener("click", () => {
     changeMainCard(getRandomCard(), mainCard);
     console.log(2);
   });
@@ -203,9 +200,9 @@ function changeMainCard(variable, lugar) {
       lugar.style.backgroundImage = "url('Poker/KC.png')";
     }
   }
-}
 
-function previewCard() {}
+  return variable;
+}
 
 //Parte del modal, sin boostrap
 
